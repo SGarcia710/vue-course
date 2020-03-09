@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic knowledge about Vuejs</title>
+    <link rel="stylesheet" href="./Basis/styles.css" />
+  </head>
+  <body>
+    <div id="app" v-bind:style="{ background: '#' + color}">
+      <!-- 
+        When we use a Component in our code the recommended way to call is using Kebab case. It doesnt matter if the component is Upper Camel Case.
+
+        Every property (props) the component needs, will be added as an HTML property in the tag using v-bind: as prefix.
+       -->
+      <coin-detail v-on:change-color="updateColor" v-bind:coin="btc">
+        <template v-slot:text>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas nobis
+            distinctio repellat architecto omnis! Quo deserunt adipisci iste
+            expedita quam repellendus id modi fugit, quasi, ut maiores delectus
+            officia possimus.Inventore eius repellat dolorem suscipit impedit
+            doloremque eveniet molestiae aliquid maiores! Dignissimos molestiae
+            tempore veniam id hic, est doloribus dolore dolorum. Autem debitis
+            veniam perspiciatis voluptatum? Totam praesentium assumenda tempora!
+          </p>
+        </template>
+        <template v-slot:link>
+          <a href="www.google.com">Link!</a>
+        </template>
+      </coin-detail>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./Basis/app.js"></script>
+  </body>
+</html>
